@@ -19,7 +19,6 @@ public class HelloControllerTest {
 
 	@Test
 	public void getGreeting() throws Exception {
-		System.out.println("test case is running");
 		assertThat(controller).isNotNull();
 	}
 }
