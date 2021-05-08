@@ -27,3 +27,13 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
 #     publishLocation: 'Container'# 
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial (ab68e504-9924-49ca-910d-8a76d0d21468)'
+    appType: 'webAppLinux'
+    WebAppName: 'myjavabytes'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.jar'
+    StartupCommand: 'java -jar /home/site/wwwroot/*.jar'
+
